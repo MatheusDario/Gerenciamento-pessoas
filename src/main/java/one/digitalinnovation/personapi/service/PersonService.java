@@ -55,6 +55,7 @@ public class PersonService {
 
     private Person verifyIfExists(Long id) throws PersonNotFoundExecption {
         return personRepository.findById(id)
+
                 .orElseThrow(() -> new PersonNotFoundExecption(id));
     }
 }
